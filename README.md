@@ -8,6 +8,10 @@
 
 _Generated portfolio visual; not a confidential product screenshot._
 
+![Public live demo screenshot for EarCodeX](assets/live.png)
+
+_Public live artifact screenshot captured on June 4, 2026._
+
 ## Overview
 
 EarCodeX is a SaaS prototype for enterprise assurance, broker and administrator workflows, reconciliation, verification, and audit-aware operations.
