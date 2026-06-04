@@ -12,6 +12,12 @@ _Generated portfolio visual; not a confidential product screenshot._
 
 _Public live artifact screenshot captured on June 4, 2026._
 
+## Demo Walkthrough
+
+_Generated public walkthrough media using public screenshots and generated portfolio visuals only. It does not show private dashboards, credentials, client records, or sensitive product internals._
+
+[![Generated public demo walkthrough poster for EarCodeX](assets/earcodex-demo-poster.png)](assets/earcodex-demo.mp4)
+
 ## Overview
 
 EarCodeX is a SaaS prototype for enterprise assurance, broker and administrator workflows, reconciliation, verification, and audit-aware operations.
@@ -36,7 +42,9 @@ I translated regulated workflow complexity into product architecture, public pos
 
 1. Visit the live artifact to inspect the public product surface.
 2. Review this case study for product, workflow, and systems positioning.
-3. Use the main portfolio index for broader context: [NWhite Systems Portfolio](https://github.com/whitemorengwira/nwhitesystems).
+3. Watch the public demo walkthrough for the guided recruiter path.
+4. Use the main portfolio index for broader context: [NWhite Systems Portfolio](https://github.com/whitemorengwira/nwhitesystems).
+5. Forward the [one-page recruiter PDF](https://github.com/whitemorengwira/nwhitesystems/blob/main/docs/assets/recruiter-pack/Whitemore-Ngwira-Selected-Systems-Portfolio.pdf) where useful.
 
 ## Confidentiality
 
