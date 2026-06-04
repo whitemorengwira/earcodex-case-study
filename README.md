@@ -4,6 +4,10 @@
 **Portfolio role:** SaaS product prototype, enterprise assurance, reconciliation workflow design  
 **Source posture:** Sanitized public case study with sensitive product internals kept controlled.
 
+![Generated portfolio visual for EarCodeX](assets/hero.png)
+
+_Generated portfolio visual; not a confidential product screenshot._
+
 ## Overview
 
 EarCodeX is a SaaS prototype for enterprise assurance, broker and administrator workflows, reconciliation, verification, and audit-aware operations.
@@ -18,6 +22,12 @@ I translated regulated workflow complexity into product architecture, public pos
 - Reconciliation and verification positioning for audit-sensitive operations.
 - Public product narrative that demonstrates architecture and delivery judgment without exposing protected internals.
 
+## Technical Proof
+
+- **Stack and delivery signals:** SaaS product framing, reconciliation workflow modeling, audit-aware interface planning, and regulated-sector access-control thinking.
+- **Review checklist:** Review the live artifact, product narrative, verification concepts, and how the case study separates public proof from protected internals.
+- **Confidentiality boundary:** This public repo avoids credentials, admin areas, client records, private workflow logic, deployment configuration, and sensitive product internals.
+
 ## Review Path
 
 1. Visit the live artifact to inspect the public product surface.
@@ -27,3 +37,7 @@ I translated regulated workflow complexity into product architecture, public pos
 ## Confidentiality
 
 This repository does not publish credentials, admin areas, private workflow logic, client data, internal data structures, deployment configuration, or sensitive product internals. Deeper walkthroughs can be provided privately where confidentiality allows.
+
+## Request Walkthrough
+
+For deeper review where permissions allow: [hello@nwhite.systems](mailto:hello@nwhite.systems?subject=Portfolio%20walkthrough%20-%20EarCodeX)
