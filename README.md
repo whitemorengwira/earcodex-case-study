@@ -35,16 +35,12 @@ I translated regulated workflow complexity into product architecture, public pos
 ## Technical Proof
 
 - **Stack and delivery signals:** SaaS product framing, reconciliation workflow modeling, audit-aware interface planning, and regulated-sector access-control thinking.
-- **Review checklist:** Review the live artifact, product narrative, verification concepts, and how the case study separates public proof from protected internals.
+- **Public evidence:** Live artifact, product narrative, verification concepts, and separation between public proof and protected internals.
 - **Confidentiality boundary:** This public repo avoids credentials, admin areas, client records, private workflow logic, deployment configuration, and sensitive product internals.
 
-## Review Path
+## Public Review Context
 
-1. Visit the live artifact to inspect the public product surface.
-2. Review this case study for product, workflow, and systems positioning.
-3. Watch the public demo walkthrough for the guided recruiter path.
-4. Use the main portfolio index for broader context: [NWhite Systems Portfolio](https://github.com/whitemorengwira/nwhitesystems).
-5. Forward the [one-page recruiter PDF](https://github.com/whitemorengwira/nwhitesystems/blob/main/docs/assets/recruiter-pack/Whitemore-Ngwira-Selected-Systems-Portfolio.pdf) where useful.
+The live artifact presents the public product surface. This case study adds product, workflow, and systems-positioning context, while the public demo walkthrough provides a guided overview. The [NWhite Systems Portfolio](https://github.com/whitemorengwira/nwhitesystems) and [one-page recruiter PDF](https://github.com/whitemorengwira/nwhitesystems/blob/main/docs/assets/recruiter-pack/Whitemore-Ngwira-Selected-Systems-Portfolio.pdf) provide broader hiring-review context.
 
 ## Confidentiality
 
@@ -56,4 +52,4 @@ This repository is public for portfolio review only and is not open-source licen
 
 ## Request Walkthrough
 
-For deeper review where permissions allow: [hello@nwhite.systems](mailto:hello@nwhite.systems?subject=Portfolio%20walkthrough%20-%20EarCodeX)
+Private walkthroughs are available where permissions allow: [hello@nwhite.systems](mailto:hello@nwhite.systems?subject=Portfolio%20walkthrough%20-%20EarCodeX)
