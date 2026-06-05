@@ -1,5 +1,9 @@
 # Security Policy
 
-This is a sanitized public portfolio case-study repository. It should not contain production credentials, private source code, client data, deployment secrets, internal system diagrams, or confidential operating documents.
+This repository is a public portfolio and recruiter review surface. It should not contain secrets, credentials, private dashboards, client records, student records, investor records, or confidential operational details.
 
-If you find anything that appears sensitive, please report it privately through GitHub private vulnerability reporting or contact the repository owner through the public profile links.
+Report sensitive concerns by email: [hello@nwhite.systems](mailto:hello@nwhite.systems?subject=Security%20concern%20-%20EarCodeX%20case%20study)
+
+Please include the repository name, file path or URL, what appears exposed, and why it may be sensitive.
+
+Do not open public issues for sensitive reports. The supported public surface is the default branch only; private production systems and confidential source are outside this repository.

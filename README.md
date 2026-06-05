@@ -50,6 +50,10 @@ I translated regulated workflow complexity into product architecture, public pos
 
 This repository does not publish credentials, admin areas, private workflow logic, client data, internal data structures, deployment configuration, or sensitive product internals. Deeper walkthroughs can be provided privately where confidentiality allows.
 
+## Usage Rights
+
+This repository is public for portfolio review only and is not open-source licensed. See [COPYRIGHT.md](COPYRIGHT.md) for usage boundaries.
+
 ## Request Walkthrough
 
 For deeper review where permissions allow: [hello@nwhite.systems](mailto:hello@nwhite.systems?subject=Portfolio%20walkthrough%20-%20EarCodeX)
