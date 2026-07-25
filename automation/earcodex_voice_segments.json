@@ -1,0 +1,75 @@
+{
+  "project": "EarCodeX realistic South African woman narration",
+  "voice": "en-ZA-LeahNeural",
+  "rate": "-5%",
+  "volume": "+0%",
+  "pitch": "+0Hz",
+  "segments": [
+    {
+      "id": 1,
+      "start": 0.7,
+      "end": 15.0,
+      "text": "Hello, and thank you for taking a moment to explore EarCodeX with me. This is our working insurance operations platform, designed to take a case from first intake right through to an authorised payment instruction."
+    },
+    {
+      "id": 2,
+      "start": 15.0,
+      "end": 30.0,
+      "text": "The central idea is simple: brokers, administrators and insurers should not have to work across disconnected spreadsheets, inboxes and legacy systems. EarCodeX brings the workflow, the evidence and the audit trail into one controlled environment."
+    },
+    {
+      "id": 3,
+      "start": 30.0,
+      "end": 45.0,
+      "text": "We begin at secure access. A user signs in, selects the authorised operating role, and enters only the functions relevant to that responsibility. This role-based structure supports oversight without making day-to-day work difficult."
+    },
+    {
+      "id": 4,
+      "start": 45.0,
+      "end": 62.0,
+      "text": "Once inside, the institutional dashboard gives the team an immediate view of structured records, service-level activity, verified data and controlled outputs. Instead of searching for updates, managers can see where work is moving and where attention is needed."
+    },
+    {
+      "id": 5,
+      "start": 62.0,
+      "end": 82.0,
+      "text": "Here is the claims processing workspace. Each claim is visible within its current service-level stage, with the amount, status and responsible workflow clearly shown. The board makes delays and exceptions easy to identify before they become customer or compliance problems."
+    },
+    {
+      "id": 6,
+      "start": 82.0,
+      "end": 102.0,
+      "text": "As the claim progresses, the authorised user moves it through review, verification and approval. EarCodeX records that change as part of the case history, so the organisation keeps a clear, traceable account of what happened, when it happened and who acted."
+    },
+    {
+      "id": 7,
+      "start": 102.0,
+      "end": 121.0,
+      "text": "That traceability is especially important where several teams, service providers or underwriting partners are involved. The platform creates one shared operational picture, while still preserving permissions, checkpoints and human approval at the decisions that carry financial or regulatory risk."
+    },
+    {
+      "id": 8,
+      "start": 121.0,
+      "end": 138.0,
+      "text": "Once a claim is approved, EarCodeX produces the payment instruction from the verified case data. The amount, beneficiary and supporting references remain linked to the original claim, reducing retyping, reconciliation errors and uncertainty during finance review."
+    },
+    {
+      "id": 9,
+      "start": 138.0,
+      "end": 157.0,
+      "text": "The same structured approach begins at onboarding. In this funeral policy application, information is captured in defined sections, checked at source and prepared for downstream processing. That improves data quality before a policy or claim reaches the operations team."
+    },
+    {
+      "id": 10,
+      "start": 157.0,
+      "end": 169.0,
+      "text": "When the application is submitted, the customer receives a clear confirmation and reference. The internal team receives a structured record that can move into review without rebuilding the file from emails or attachments."
+    },
+    {
+      "id": 11,
+      "start": 169.0,
+      "end": 173.5,
+      "text": "EarCodeX is ready for insurer-led pilot validation. Thank you."
+    }
+  ]
+}
