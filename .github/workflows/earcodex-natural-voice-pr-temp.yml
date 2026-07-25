@@ -1,0 +1,53 @@
+name: Temporary EarCodeX natural narration PR render
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - scripts/earcodex_natural_voice_temp.py
+      - .github/workflows/earcodex-natural-voice-temp.yml
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out pull request
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install voice and audio dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install 'edge-tts>=7.0,<8' 'pydub==0.25.1'
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+
+      - name: Render South African English female narration
+        run: python scripts/earcodex_natural_voice_temp.py
+
+      - name: Validate generated audio
+        run: |
+          test -s temp_output/earcodex_narration_za_female.mp3
+          test -s temp_output/earcodex_narration_za_female.wav
+          ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 temp_output/earcodex_narration_za_female.mp3
+          cat temp_output/voice_used.txt
+
+      - name: Upload narration artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: earcodex-natural-za-female-narration
+          path: |
+            temp_output/earcodex_narration_za_female.mp3
+            temp_output/earcodex_narration_za_female.wav
+            temp_output/voice_used.txt
+          retention-days: 1
