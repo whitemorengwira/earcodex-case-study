@@ -1,0 +1,96 @@
+name: Render EarCodeX Realistic Woman Voice
+
+on:
+  push:
+    branches:
+      - earcodex-realistic-woman-voice-20260725
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  render-voice:
+    if: github.event_name == 'pull_request' && github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out temporary voice branch
+        uses: actions/checkout@v4
+        with:
+          ref: earcodex-realistic-woman-voice-20260725
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install neural voice renderer
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install edge-tts==7.2.8
+
+      - name: Render the South African female narration
+        run: |
+          rm -rf rendered_voice
+          mkdir -p rendered_voice
+          python - <<'PY'
+          import asyncio
+          import json
+          from pathlib import Path
+          import edge_tts
+
+          source = Path('automation/earcodex_voice_segments.json')
+          output = Path('rendered_voice')
+          data = json.loads(source.read_text(encoding='utf-8'))
+
+          async def render_one(segment):
+              path = output / f"segment_{int(segment['id']):02d}.mp3"
+              last_error = None
+              for attempt in range(1, 6):
+                  try:
+                      speech = edge_tts.Communicate(
+                          text=segment['text'],
+                          voice=data['voice'],
+                          rate=data.get('rate', '-5%'),
+                          volume=data.get('volume', '+0%'),
+                          pitch=data.get('pitch', '+0Hz'),
+                      )
+                      await speech.save(str(path))
+                      if path.exists() and path.stat().st_size > 10000:
+                          print(f"Rendered {path.name}: {path.stat().st_size} bytes")
+                          return
+                      raise RuntimeError(f"Output too small: {path}")
+                  except Exception as exc:
+                      last_error = exc
+                      print(f"Attempt {attempt} failed for segment {segment['id']}: {exc}")
+                      await asyncio.sleep(attempt * 4)
+              raise RuntimeError(f"Segment {segment['id']} failed: {last_error}")
+
+          async def main():
+              for segment in data['segments']:
+                  await render_one(segment)
+
+          asyncio.run(main())
+          (output / 'earcodex_voice_segments.json').write_text(
+              json.dumps(data, indent=2, ensure_ascii=False),
+              encoding='utf-8',
+          )
+          PY
+
+      - name: Verify all audio segments
+        run: |
+          test "$(find rendered_voice -maxdepth 1 -name 'segment_*.mp3' | wc -l)" -eq 11
+          find rendered_voice -maxdepth 1 -type f -printf '%f %s bytes\n' | sort
+
+      - name: Commit the temporary rendered files
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add rendered_voice
+          git commit -m 'Add temporary rendered EarCodeX voice segments [voice-rendered]'
+          git push origin HEAD:earcodex-realistic-woman-voice-20260725
