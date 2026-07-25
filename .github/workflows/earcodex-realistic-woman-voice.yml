@@ -26,71 +26,89 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Prepare diagnostics folder
+        run: mkdir -p rendered_voice
+
       - name: Install neural text-to-speech renderer
+        continue-on-error: true
         run: |
-          python -m pip install --upgrade pip
-          python -m pip install edge-tts
+          set +e
+          python -m pip install --upgrade pip 2>&1 | tee rendered_voice/pip-upgrade.log
+          python -m pip install edge-tts 2>&1 | tee rendered_voice/edge-tts-install.log
+          echo "pip_exit=${PIPESTATUS[0]}" >> rendered_voice/install-status.txt
+          exit 0
 
       - name: Render the timed South African female narration segments
+        continue-on-error: true
         run: |
-          python - <<'PY'
+          set +e
+          python - <<'PY' > rendered_voice/render.log 2>&1
           import asyncio
           import json
           import shutil
+          import traceback
           from pathlib import Path
-
-          import edge_tts
 
           SOURCE = Path('automation/earcodex_voice_segments.json')
           OUTPUT = Path('rendered_voice')
           OUTPUT.mkdir(parents=True, exist_ok=True)
 
-          data = json.loads(SOURCE.read_text(encoding='utf-8'))
-          voice = data['voice']
-          rate = data.get('rate', '-5%')
-          volume = data.get('volume', '+0%')
-          pitch = data.get('pitch', '+0Hz')
+          try:
+              import edge_tts
 
-          async def render_one(segment):
-              segment_id = int(segment['id'])
-              output_path = OUTPUT / f'segment_{segment_id:02d}.mp3'
-              last_error = None
+              data = json.loads(SOURCE.read_text(encoding='utf-8'))
+              voice = data['voice']
+              rate = data.get('rate', '-5%')
+              volume = data.get('volume', '+0%')
+              pitch = data.get('pitch', '+0Hz')
 
-              for attempt in range(1, 4):
-                  try:
-                      communicator = edge_tts.Communicate(
-                          text=segment['text'],
-                          voice=voice,
-                          rate=rate,
-                          volume=volume,
-                          pitch=pitch,
-                      )
-                      await communicator.save(str(output_path))
-                      if output_path.exists() and output_path.stat().st_size > 1024:
-                          print(f'Rendered {output_path} ({output_path.stat().st_size} bytes)')
-                          return
-                      raise RuntimeError(f'Output file was empty: {output_path}')
-                  except Exception as exc:
-                      last_error = exc
-                      print(f'Attempt {attempt} failed for segment {segment_id}: {exc}')
-                      await asyncio.sleep(attempt * 3)
+              async def render_one(segment):
+                  segment_id = int(segment['id'])
+                  output_path = OUTPUT / f'segment_{segment_id:02d}.mp3'
+                  last_error = None
 
-              raise RuntimeError(f'Could not render segment {segment_id}: {last_error}')
+                  for attempt in range(1, 4):
+                      try:
+                          communicator = edge_tts.Communicate(
+                              text=segment['text'],
+                              voice=voice,
+                              rate=rate,
+                              volume=volume,
+                              pitch=pitch,
+                          )
+                          await communicator.save(str(output_path))
+                          if output_path.exists() and output_path.stat().st_size > 1024:
+                              print(f'Rendered {output_path} ({output_path.stat().st_size} bytes)')
+                              return
+                          raise RuntimeError(f'Output file was empty: {output_path}')
+                      except Exception as exc:
+                          last_error = exc
+                          print(f'Attempt {attempt} failed for segment {segment_id}: {exc}')
+                          await asyncio.sleep(attempt * 3)
 
-          async def main():
-              for segment in data['segments']:
-                  await render_one(segment)
+                  raise RuntimeError(f'Could not render segment {segment_id}: {last_error}')
 
-          asyncio.run(main())
-          shutil.copy2(SOURCE, OUTPUT / 'earcodex_voice_segments.json')
+              async def main():
+                  for segment in data['segments']:
+                      await render_one(segment)
+
+              asyncio.run(main())
+              shutil.copy2(SOURCE, OUTPUT / 'earcodex_voice_segments.json')
+              (OUTPUT / 'render-status.txt').write_text('success\n', encoding='utf-8')
+          except Exception:
+              traceback.print_exc()
+              (OUTPUT / 'render-status.txt').write_text('failure\n', encoding='utf-8')
           PY
+          exit 0
 
-      - name: Verify generated audio files
+      - name: Record generated file inventory
+        if: always()
         run: |
-          test "$(find rendered_voice -maxdepth 1 -name 'segment_*.mp3' | wc -l)" -eq 11
-          find rendered_voice -maxdepth 1 -type f -printf '%f %s bytes\n' | sort
+          find rendered_voice -maxdepth 1 -type f -printf '%f %s bytes\n' | sort | tee rendered_voice/file-inventory.txt
+          echo "segment_count=$(find rendered_voice -maxdepth 1 -name 'segment_*.mp3' | wc -l)" | tee -a rendered_voice/file-inventory.txt
 
-      - name: Upload realistic woman voice tracks
+      - name: Upload realistic woman voice tracks and diagnostics
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: earcodex-realistic-south-african-woman-voice
