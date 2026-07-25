@@ -4,13 +4,16 @@ on:
   push:
     branches:
       - earcodex-realistic-woman-voice-20260725
+  pull_request:
+    branches:
+      - main
 
 permissions:
   contents: write
 
 jobs:
   render-voice:
-    if: github.actor != 'github-actions[bot]'
+    if: github.event_name == 'pull_request' && github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
