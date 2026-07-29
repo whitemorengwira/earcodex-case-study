@@ -1,8 +1,8 @@
-# EarCodeX SaaS Prototype - Portfolio Case Study
+# EarCodeX SaaS Prototype — Sanitised Portfolio Case Study
 
-**Live artifact:** [https://earcodex.vercel.app/](https://earcodex.vercel.app/)  
-**Portfolio role:** SaaS product prototype, enterprise assurance, reconciliation workflow design  
-**Source posture:** Sanitized public case study with sensitive product internals kept controlled.
+**Live public artefact:** [https://earcodex.vercel.app/](https://earcodex.vercel.app/)  
+**Portfolio role:** SaaS product prototype, enterprise assurance and reconciliation-workflow design  
+**Repository posture:** Public case study only. The implementation repository and sensitive product internals are private.
 
 ![Generated portfolio visual for EarCodeX](assets/hero.png)
 
@@ -10,46 +10,47 @@ _Generated portfolio visual; not a confidential product screenshot._
 
 ![Public live demo screenshot for EarCodeX](assets/live.png)
 
-_Public live artifact screenshot captured on June 4, 2026._
+_Public live artefact screenshot captured on 4 June 2026._
 
 ## Demo Walkthrough
 
-_Generated public walkthrough media using public screenshots and generated portfolio visuals only. It does not show private dashboards, credentials, client records, or sensitive product internals._
+_This public walkthrough uses approved screenshots and generated portfolio visuals only. It does not show private dashboards, credentials, client records, administrative areas or sensitive product internals._
 
 [![Generated public demo walkthrough poster for EarCodeX](assets/earcodex-demo-poster.png)](assets/earcodex-demo.mp4)
 
 ## Overview
 
-EarCodeX is a SaaS prototype for enterprise assurance, broker and administrator workflows, reconciliation, verification, and audit-aware operations.
+EarCodeX is a SaaS prototype for enterprise assurance, broker and administrator workflows, reconciliation, verification and audit-aware operations.
 
 ## My Role
 
-I translated regulated workflow complexity into product architecture, public positioning, interface structure, and a reviewable digital prototype.
+I translated regulated workflow complexity into product architecture, public positioning, interface structure and a reviewable digital prototype.
 
 ## What This Demonstrates
 
-- SaaS-style product framing for insurance and enterprise assurance workflows.
-- Reconciliation and verification positioning for audit-sensitive operations.
-- Public product narrative that demonstrates architecture and delivery judgment without exposing protected internals.
+- SaaS product framing for insurance and enterprise-assurance workflows.
+- Reconciliation and verification thinking for audit-sensitive operations.
+- Human-supervised workflow and access-control concepts.
+- Public product communication without exposing protected implementation details.
 
 ## Technical Proof
 
-- **Stack and delivery signals:** SaaS product framing, reconciliation workflow modeling, audit-aware interface planning, and regulated-sector access-control thinking.
-- **Public evidence:** Live artifact, product narrative, verification concepts, and separation between public proof and protected internals.
-- **Confidentiality boundary:** This public repo avoids credentials, admin areas, client records, private workflow logic, deployment configuration, and sensitive product internals.
+- **Delivery signals:** SaaS product framing, reconciliation workflow modelling, audit-aware interface planning and regulated-sector access-control thinking.
+- **Public evidence:** Live public artefact, approved product narrative, verification concepts and deliberate separation between public proof and protected internals.
+- **Confidentiality boundary:** No credentials, client records, private workflow logic, database design, deployment configuration, administrative areas or implementation source are published here.
 
 ## Public Review Context
 
-The live artifact presents the public product surface. This case study adds product, workflow, and systems-positioning context, while the public demo walkthrough provides a guided overview. The [NWhite Systems Portfolio](https://github.com/whitemorengwira/nwhitesystems) and [one-page recruiter PDF](https://github.com/whitemorengwira/nwhitesystems/blob/main/docs/assets/recruiter-pack/Whitemore-Ngwira-Selected-Systems-Portfolio.pdf) provide broader hiring-review context.
+The live artefact presents the public product surface. This repository adds product, workflow and systems-positioning context. For broader review, visit the [N.White Systems portfolio](https://nwhite.systems/portfolio-review) or the [public GitHub portfolio index](https://github.com/whitemorengwira/nwhitesystems).
 
 ## Confidentiality
 
-This repository does not publish credentials, admin areas, private workflow logic, client data, internal data structures, deployment configuration, or sensitive product internals. Deeper walkthroughs can be provided privately where confidentiality allows.
+The implementation repository is private. Deeper walkthroughs can be provided only where permission and confidentiality allow.
 
 ## Usage Rights
 
 This repository is public for portfolio review only and is not open-source licensed. See [COPYRIGHT.md](COPYRIGHT.md) for usage boundaries.
 
-## Request Walkthrough
+## Request a Walkthrough
 
-Private walkthroughs are available where permissions allow: [hello@nwhite.systems](mailto:hello@nwhite.systems?subject=Portfolio%20walkthrough%20-%20EarCodeX)
+Contact [hello@nwhite.systems](mailto:hello@nwhite.systems?subject=Private%20portfolio%20walkthrough%20-%20EarCodeX).
