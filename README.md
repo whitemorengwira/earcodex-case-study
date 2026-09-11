@@ -12,33 +12,33 @@
 [![Live Platform](https://img.shields.io/badge/Live%20Platform-earcodex.vercel.app-D4AF37?style=flat-square)](https://earcodex.vercel.app/)
 
 ![Generated portfolio visual for EarCodeX](assets/hero.png)
-_Figure 1: EarCodeX enterprise assurance, claims automation, and insurance operating architecture._
+*Figure 1: My enterprise assurance, claims automation, and insurance operating architecture for EarCodeX.*
 
 ![Public live demo screenshot for EarCodeX](assets/live.png)
-_Figure 2: EarCodeX public interface demonstration._
+*Figure 2: EarCodeX public interface demonstration.*
 
 ---
 
 ## Executive Architectural Summary
 
-**EarCodeX** is an enterprise assurance, insurance administration, and AI claims automation platform designed to modernise regulated insurance operations.
+I architected and engineered **EarCodeX** as an enterprise assurance, insurance administration, and AI claims automation system designed to modernise regulated insurance operations.
 
-Rather than a simple front-end interface, EarCodeX represents a complete **systems-architecture model** connecting:
+Rather than a surface-level interface, I built EarCodeX as a complete **systems-architecture model** connecting:
 \`\`\`
 Business Problem → Enterprise Architecture → AWS Cloud Infrastructure → AI Document Intelligence → Claims Automation → Reconciliation → Production Playout
 \`\`\`
 
-The system addresses the core operational challenges of high-volume financial services: broker and member onboarding, document verification, multi-stage claims processing, automated financial reconciliation, compliance monitoring, and immutable audit logging.
+I designed the system to solve the critical operational bottlenecks of high-volume financial services: broker and member onboarding, document verification, multi-stage claims adjudication, automated financial reconciliation, compliance monitoring, and immutable audit logging.
 
 ---
 
-## 🏛️ Core Architecture Principles
+## 🏛️ My Core Architecture Principles
 
-1. **AWS Cloud Foundation**: Built on scalable Amazon Web Services infrastructure using **Terraform (Infrastructure as Code)** for repeatable, multi-environment provisioning (staging, testing, production).
-2. **AI-Enabled Claims Automation**: Automated policy cross-referencing, document data extraction, structured information ingestion, and decision-support routing.
-3. **Zero-Trust Security & Access Control**: Granular **AWS IAM** role-based access control (RBAC), multi-tenant isolation, and **AWS KMS** customer-managed envelope encryption.
-4. **Audit-Aware Reconciliation**: Transaction reconciliation and immutable audit trails configured via **AWS CloudTrail** and **Amazon CloudWatch** for strict regulatory compliance.
-5. **Prototype-to-Production Pathway**: Architected from inception with production-grade boundaries, modular microservice boundaries, containerization (Docker), and declarative CI/CD pipelines.
+1. **AWS Cloud Foundation**: I built the environment on scalable Amazon Web Services infrastructure using **Terraform (Infrastructure as Code)** for repeatable, multi-environment provisioning (staging, testing, production).
+2. **AI-Enabled Claims Automation**: I implemented automated policy cross-referencing, document data extraction, structured information ingestion, and decision-support routing.
+3. **Zero-Trust Security & Access Control**: I enforced granular **AWS IAM** role-based access control (RBAC), multi-tenant isolation, and **AWS KMS** customer-managed envelope encryption.
+4. **Audit-Aware Reconciliation**: I configured transaction reconciliation and immutable audit trails via **AWS CloudTrail** and **Amazon CloudWatch** for strict regulatory compliance.
+5. **Prototype-to-Production Pathway**: I architected the platform from inception with production-grade boundaries, modular microservice boundaries, containerisation (Docker), and declarative CI/CD pipelines.
 
 ---
 
@@ -78,16 +78,16 @@ The system addresses the core operational challenges of high-volume financial se
 ## 💼 Operating Capabilities
 
 ### 1. Insurance Administration & Onboarding
-Structured digital intake for brokers, administrators, and policyholders with verified data capture, identity verification, and role-based permissions.
+I structured digital intake for brokers, administrators, and policyholders with verified data capture, identity verification, and role-based permissions.
 
 ### 2. Intelligent Claims Workflow Automation
-Automates first-notice-of-loss (FNOL), evidence document intake (medical invoices, police dockets, repair estimates), claim validation, and exception routing to human adjudicators.
+I automated first-notice-of-loss (FNOL), evidence document intake (medical invoices, police dockets, repair estimates), claim validation, and exception routing to human adjudicators.
 
 ### 3. Financial Reconciliation & Settlement
-Automated reconciliation between broker policy collections, underwriter balances, and claims disbursement ledgers, eliminating manual spreadsheet bottlenecks.
+I built automated reconciliation between broker policy collections, underwriter balances, and claims disbursement ledgers, eliminating manual spreadsheet bottlenecks.
 
 ### 4. Regulatory Compliance & Governance
-Immutable audit records for every status transition, payment authorization, and document inspection, ensuring complete compliance readiness.
+I implemented immutable audit records for every status transition, payment authorisation, and document inspection, ensuring complete compliance readiness.
 
 ---
 
@@ -106,9 +106,9 @@ Immutable audit records for every status transition, payment authorization, and 
 
 ## ⚖️ Confidentiality & Review Boundary
 
-This public repository serves as a sanitized architectural case study. In accordance with client and regulatory confidentiality agreements:
+This public repository serves as a sanitised architectural case study. In accordance with client and regulatory confidentiality agreements:
 * Proprietary underwriter pricing matrices, private actuarial datasets, administrative API credentials, and client records are strictly excluded from public display.
-* The public platform demonstrates the architectural, workflow, and user interface systems without exposing protected financial institution backend databases.
+* The public platform demonstrates my architectural, workflow, and user interface systems without exposing protected financial institution backend databases.
 
 ---
 
